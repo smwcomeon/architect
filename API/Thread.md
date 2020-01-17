@@ -13,7 +13,9 @@
 	        };
 	 new Thread(runnable).start();
    ```
-	* 创建方式二：*
+	
+* 创建方式二：*
+	
   ```java
 	new Thread(){
 	            @Override
@@ -22,7 +24,9 @@
 	            }
 	  }.start();
     ```
-	* 枷锁方式：*
+    
+* 枷锁方式：*
+
   ```java
 		//创建一个锁对象
 		    Object obj =new Object();
@@ -39,16 +43,17 @@
 		            ticket --;
 		 }
      ```
-	* Lock锁：*
+     
+* Lock锁：*
   
-		提供了比synchronied代码块和synchronized方法更广泛的操作
-		同步代码块/同步方法具有的功能Lock都有，除此之外，更面体现面向对象
-		Lock锁也称为同步锁，加锁和释放锁的方法：
-			public void  lock（）：加同步锁
-			public void  unlock（）：释放同步锁
-			
-		lock对象的创建方式：
-			Lock lock = new ReentrantLock(); 
-			        lock.lock();    //加锁
-			        lock.unlock();  //释放锁
-		通常情况下，unlock（）方法一般与try..catch..finally代块连用
+	提供了比synchronied代码块和synchronized方法更广泛的操作
+	同步代码块/同步方法具有的功能Lock都有，除此之外，更面体现面向对象
+	Lock锁也称为同步锁，加锁和释放锁的方法：
+		public void  lock（）：加同步锁
+		public void  unlock（）：释放同步锁
+
+	lock对象的创建方式：
+		Lock lock = new ReentrantLock(); 
+			lock.lock();    //加锁
+			lock.unlock();  //释放锁
+	通常情况下，unlock（）方法一般与try..catch..finally代块连用
