@@ -1,6 +1,6 @@
 ## Thread
 	
-  **创建方式一：**
+  * 创建方式一：*
 	此方法是实现Runnable，避免只能继承Thread一个类，可以变相的继承另一个类
   ```java
 	 Runnable runnable = new Runnable() {
@@ -13,7 +13,7 @@
 	        };
 	 new Thread(runnable).start();
    ```
-	** 创建方式二：**
+	* 创建方式二：*
   ```java
 	new Thread(){
 	            @Override
@@ -22,7 +22,7 @@
 	            }
 	  }.start();
     ```
-	** 枷锁方式：**
+	* 枷锁方式：*
   ```java
 		//创建一个锁对象
 		    Object obj =new Object();
@@ -39,7 +39,7 @@
 		            ticket --;
 		 }
      ```
-	** Lock锁：**
+	* Lock锁：*
   
 		提供了比synchronied代码块和synchronized方法更广泛的操作
 		同步代码块/同步方法具有的功能Lock都有，除此之外，更面体现面向对象
