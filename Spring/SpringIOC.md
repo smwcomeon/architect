@@ -52,31 +52,34 @@ Constructor-based Dependency Injection)
 
 ### Constructor-based Dependency Injection
 [构造方法注入参考文档：](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-constructor-injection)
+![注入方法示例](https://github.com/smwcomeon/architect/blob/master/Spring/images/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%B3%A8%E5%85%A5.png)
+![setter示例](https://github.com/smwcomeon/architect/blob/master/Spring/images/set%E6%96%B9%E6%B3%95%E6%B3%A8%E5%85%A5.png)
+
+### Setter-based Dependency Injection
+[setter参考文档](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-setter-injection)
 
 
+## 自动装配
 
-Setter-based Dependency Injection
-setter参考文档：
-https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-setter-injection
+    上面说过，IOC的注入有两个地方需要提供依赖关系，一是类的定义中，二是在spring的配置中需要去描述。自动装配则把第二个取消了，即我们仅仅需要在类中提供依赖，继而把对象交给容器管理即可完成注入。
+    在实际开发中，描述类之间的依赖关系通常是大篇幅的，如果使用自动装配则省去了很多配置，并且如果对象的依赖发生更新我们可以不需要去更新配置，但是也带来了一定的缺点
+    
+[自动装配的优点参考文档：](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-factory-autowire)
+[缺点参考文档：](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-autowired-exceptions)
 
+### 自动装配的方法
 
-自动装配
-上面说过，IOC的注入有两个地方需要提供依赖关系，一是类的定义中，二是在spring的配置中需要去描述。自动装配则把第二个取消了，即我们仅仅需要在类中提供依赖，继而把对象交给容器管理即可完成注入。
-在实际开发中，描述类之间的依赖关系通常是大篇幅的，如果使用自动装配则省去了很多配置，并且如果对象的依赖发生更新我们可以不需要去更新配置，但是也带来了一定的缺点
-自动装配的优点参考文档：
-https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-factory-autowire
-缺点参考文档：
-https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-autowired-exceptions
-作为我来讲，我觉得以上缺点都不是缺点
-自动装配的方法
+```text
 no
 byName
 byType
 constructor
 自动装配的方式参考文档：
 https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-factory-autowire
+```
+![注入类型](https://github.com/smwcomeon/architect/blob/master/Spring/images/autoware%E6%B3%A8%E5%85%A5%E7%A7%8D%E7%B1%BB.png)
 
-spring懒加载
+### spring懒加载
 官网已经解释的非常清楚了：
 https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-factory-lazy-init
 
